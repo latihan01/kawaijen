@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#070510;
+  --surface:#0e0b1e;
+  --surface-2:#151030;
+  --line:#2a2150;
+  --text:#f5f3ff;
+  --muted:#b8b0d8;
+  --purple:#7c3aed;
+  --blue:#00d4ff;
+  --gold:#ffc531;
+  --safe-area-inset-top:0px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#070510; --surface:#0e0b1e; --surface-2:#151030; --text:#f5f3ff; --muted:#b8b0d8; }
+}
+*{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,sans-serif}
+.font-display{font-family:Orbitron,"Plus Jakarta Sans",sans-serif}
+.hero-grid{background-image:linear-gradient(rgba(124,58,237,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.10) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(circle at 50% 30%,black 20%,transparent 78%)}
+.gold-text{background:linear-gradient(90deg,#fff0a8,#ffc531,#ff8b25);-webkit-background-clip:text;background-clip:text;color:transparent}
+.neon{box-shadow:0 0 0 1px rgba(0,212,255,.28),0 18px 55px rgba(124,58,237,.22)}
+.card-hover{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.card-hover:hover{transform:translateY(-6px);border-color:rgba(0,212,255,.55);box-shadow:0 22px 55px rgba(124,58,237,.28)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,.35)}50%{box-shadow:0 0 0 10px rgba(0,212,255,0)}}
+.float{animation:float 4s ease-in-out infinite}
+.pulse-glow{animation:pulseGlow 2.4s ease-in-out infinite}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{animation:marquee 24s linear infinite}
+details summary::-webkit-details-marker{display:none}
